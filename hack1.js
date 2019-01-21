@@ -1,3 +1,4 @@
+//ver4
 function initFunc(_playerDiv, _avatar, _owner, _rank) {
     var r = _avatar[0] % W,
         s = _avatar[1] % H,
@@ -137,19 +138,6 @@ function b(t) {
     return t
 }
 
-function w() {
-    it.context.resume();
-    var t = k(),
-        e = io();
-    e.emit("login", t),
-        e.on("result", function (o) {
-            o.code ? (jQuery("#error-login").hide(),
-                    x(o.host, t)) : (jQuery("#error-login").text(o.msg).show(),
-                    at.goto("login")),
-                e.close()
-        })
-}
-
 function k() {
     var e = jQuery("#inputName")[0].value.split("#", 2);
     0 == e.length && (e = ["", ""]),
@@ -166,6 +154,19 @@ function k() {
         language: s,
         createPrivate: lt
     }
+}
+
+function w() {
+    it.context.resume();
+    var t = k(),
+        e = io();
+    e.emit("login", t),
+        e.on("result", function (o) {
+            o.code ? (jQuery("#error-login").hide(),
+                    x(o.host, t)) : (jQuery("#error-login").text(o.msg).show(),
+                    at.goto("login")),
+                e.close()
+        })
 }
 
 function x(t, e) {
