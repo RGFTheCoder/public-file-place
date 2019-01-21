@@ -96,7 +96,7 @@ function g() {
     if (!t) {
         var n = localStorage.getItem("lastAd"),
             s = new Date;
-        if (null === n || n === r || "undefined" === n)
+        if (null === n || n === undefined || "undefined" === n)
             e = !0;
         else {
             var i = new Date(Date.parse(n));
@@ -104,7 +104,7 @@ function g() {
         }
         e && localStorage.setItem("lastAd", s.toString())
     }
-    e && aiptag && adplayer && adplayer !== r && null !== adplayer && "undefined" !== adplayer ? aiptag.cmd.player.push(function () {
+    e && aiptag && adplayer && adplayer !== undefined && null !== adplayer && "undefined" !== adplayer ? aiptag.cmd.player.push(function () {
         adplayer.startPreRoll()
     }) : w()
 }
@@ -5196,7 +5196,7 @@ D(80),
         game && game.checkDrawing() && M(t.clientX, t.clientY, !1)
     }),
     jQuery(document).keypress(function (t) {
-        if (game && game.checkDrawing() && t !== r && t.key !== r)
+        if (game && game.checkDrawing() && t !== undefined && t.key !== undefined)
             switch (t.key.toUpperCase()) {
                 case "B":
                     ct.brush.setTool("pen");
